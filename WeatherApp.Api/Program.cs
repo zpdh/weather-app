@@ -1,3 +1,4 @@
+using StackExchange.Redis;
 using WeatherApp.Api.Endpoints;
 using WeatherApp.Api.Middlewares;
 using WeatherApp.Domain.Entities;
@@ -9,6 +10,10 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddHttpClient();
+
+var redisConnectionString = builder.Configuration.GetConnectionString("Redis")!;
+
+builder.Services.AddSingleton<IConnectionMultiplexer>(ConnectionMultiplexer.Connect(redisConnectionString));
 
 var app = builder.Build();
 
