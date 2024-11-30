@@ -1,9 +1,14 @@
+using WeatherApp.Api.Endpoints;
+using WeatherApp.Api.Middlewares;
+using WeatherApp.Domain.Entities;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddHttpClient();
 
 var app = builder.Build();
 
@@ -13,6 +18,12 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+app.UseMiddleware<ExceptionFilterMiddleware>();
+
+var apiKey = builder.Configuration["WeatherApiKey"]!;
+
+WeatherEndpoints.MapEndpoints(app, apiKey);
 
 app.UseHttpsRedirection();
 

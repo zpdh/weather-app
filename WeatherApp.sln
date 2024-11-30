@@ -6,10 +6,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeatherApp.Api", "WeatherAp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeatherApp.Domain", "WeatherApp.Domain\WeatherApp.Domain.csproj", "{D4F273D9-BA56-4895-88D5-FCD61098F75A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeatherApp.Infrastructure", "WeatherApp.Infrastructure\WeatherApp.Infrastructure.csproj", "{687A8756-9C9D-4727-95C2-1CA45F1722DC}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeatherApp.Application", "WeatherApp.Application\WeatherApp.Application.csproj", "{7DD42D91-43FF-4C07-B033-6609AA964D2C}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,8 +14,6 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{52DFD8B3-2818-4586-8EEB-BFFF93473CF3} = {9202890A-6DC8-4DE4-9639-D11BDC630A85}
 		{D4F273D9-BA56-4895-88D5-FCD61098F75A} = {9202890A-6DC8-4DE4-9639-D11BDC630A85}
-		{687A8756-9C9D-4727-95C2-1CA45F1722DC} = {9202890A-6DC8-4DE4-9639-D11BDC630A85}
-		{7DD42D91-43FF-4C07-B033-6609AA964D2C} = {9202890A-6DC8-4DE4-9639-D11BDC630A85}
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{52DFD8B3-2818-4586-8EEB-BFFF93473CF3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -30,13 +24,5 @@ Global
 		{D4F273D9-BA56-4895-88D5-FCD61098F75A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D4F273D9-BA56-4895-88D5-FCD61098F75A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D4F273D9-BA56-4895-88D5-FCD61098F75A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{687A8756-9C9D-4727-95C2-1CA45F1722DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{687A8756-9C9D-4727-95C2-1CA45F1722DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{687A8756-9C9D-4727-95C2-1CA45F1722DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{687A8756-9C9D-4727-95C2-1CA45F1722DC}.Release|Any CPU.Build.0 = Release|Any CPU
-		{7DD42D91-43FF-4C07-B033-6609AA964D2C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7DD42D91-43FF-4C07-B033-6609AA964D2C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{7DD42D91-43FF-4C07-B033-6609AA964D2C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{7DD42D91-43FF-4C07-B033-6609AA964D2C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

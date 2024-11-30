@@ -12,7 +12,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="Endpoints\" />
+      <ProjectReference Include="..\WeatherApp.Domain\WeatherApp.Domain.csproj" />
     </ItemGroup>
 
 </Project>
