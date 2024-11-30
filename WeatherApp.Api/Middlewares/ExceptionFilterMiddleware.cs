@@ -1,4 +1,6 @@
-﻿namespace WeatherApp.Api.Middlewares;
+﻿using WeatherApp.Domain.Entities;
+
+namespace WeatherApp.Api.Middlewares;
 
 public class ExceptionFilterMiddleware
 {
@@ -17,23 +19,23 @@ public class ExceptionFilterMiddleware
         }
         catch (HttpRequestException httpException)
         {
-            await HandleRequestException(context, httpException);
+            await HandleRequestExceptionAsync(context, httpException);
         }
         catch (Exception)
         {
-            await HandleUnknownException(context);
+            await HandleUnknownExceptionAsync(context);
         }
     }
 
-    private static Task HandleRequestException(HttpContext context, HttpRequestException exception)
+    private static async Task HandleRequestExceptionAsync(HttpContext context, HttpRequestException exception)
     {
         context.Response.StatusCode = (int)exception.StatusCode!;
-        return context.Response.WriteAsJsonAsync(new { message = exception.Message });
+        await context.Response.WriteAsJsonAsync(new ErrorResponse(exception.Message));
     }
 
-    private static Task HandleUnknownException(HttpContext context)
+    private static async Task HandleUnknownExceptionAsync(HttpContext context)
     {
         context.Response.StatusCode = StatusCodes.Status500InternalServerError;
-        return context.Response.WriteAsJsonAsync(new { message = "An unknown exception occurred" });
+        await context.Response.WriteAsJsonAsync(new ErrorResponse("An unknown exception occurred"));
     }
 }

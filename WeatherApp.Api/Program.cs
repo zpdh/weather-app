@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.RateLimiting;
 using StackExchange.Redis;
 using WeatherApp.Api.Endpoints;
 using WeatherApp.Api.Middlewares;
@@ -25,6 +26,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseMiddleware<ExceptionFilterMiddleware>();
+app.UseMiddleware<RateLimiterMiddleware>();
 
 var apiKey = builder.Configuration["WeatherApiKey"]!;
 
